@@ -1,0 +1,15 @@
+// Container
+//----------------------------------------------------
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @include up-568 {
+    width: 500px;
+  }
+
+  @include up-768 {
+    width: 700px;
+  }
+}

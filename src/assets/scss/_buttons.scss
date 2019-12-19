@@ -1,0 +1,30 @@
+// Buttons
+//----------------------------------------------------
+.button {
+  transition: $transition;
+  background: transparent;
+  border-radius: $radius;
+  text-decoration: none;
+  color: $black-color;
+  white-space: nowrap;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 0;
+
+  // Default ------------------------------
+  &.button-default {
+
+    &:hover {
+      background: rgba($gray-color, .2);
+    }
+  }
+
+  // Primary ------------------------------
+  &.button-primary {
+    background: rgba($primary-color, .6);
+
+    &:hover {
+      background: rgba($primary-color, 1);
+    }
+  }
+}

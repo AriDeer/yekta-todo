@@ -1,0 +1,38 @@
+// Main style file
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import "variables";
+@import "mixins";
+@import "container";
+@import "buttons";
+
+html {
+  height: 101%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.logo {
+  width: 70%;
+  max-width: 200px;
+  display: block;
+  margin: 50px auto 0;
+}
+
+.space-l-5 {
+  margin-left: 5px;
+}
+
+.sectionTitle {
+  margin: 35px 0 10px;
+}
+
+// Components
+@import "components/AddTodo";
+@import "components/Item";
+@import "components/Empty";
