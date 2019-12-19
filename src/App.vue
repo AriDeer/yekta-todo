@@ -4,7 +4,7 @@
 
             <img class="logo" src="./assets/images/logo.png" alt="yektanet">
 
-            <AddTodo @add="getItemData"/>
+            <AddTodo @add="addTodo"/>
 
             <h4 class="sectionTitle">Pined:</h4>
             <template v-if="pin.length">
@@ -58,24 +58,18 @@
         data() {
             return {
                 pin: [],
-
-                todo: [
-                    {
-                        note: 'Hello fuckers mother',
-                        selectedColor: '229, 57, 53',
-                        priority: 0,
-                        isPin: false,
-                        isDone: false
-                    }
-                ],
-
+                todo: [],
                 done: []
             };
         },
 
         methods: {
 
-            getItemData(payload) {
+            /**
+             * This func add a note to todo_array
+             * @param payload
+             */
+            addTodo(payload) {
                 this.todo.unshift({
                     ...payload,
                     isPin: false,
@@ -85,6 +79,12 @@
                 this.sortByPriority(this.todo);
             },
 
+            /**
+             * Pin and Unpin
+             *
+             * @param item
+             * @param index
+             */
             togglePin(item, index) {
 
                 if (item.isPin) {
@@ -104,6 +104,12 @@
                 }
             },
 
+            /**
+             * Send note to done
+             *
+             * @param item
+             * @param index
+             */
             checkToDone(item, index) {
                 item.isDone = true;
                 this.todo.splice(index, 1);
@@ -111,6 +117,11 @@
                 this.done.unshift(item);
             },
 
+            /**
+             * Sort array by priority
+             *
+             * @param array
+             */
             sortByPriority(array) {
                 array.sort((a, b) => {
                     return a.priority - b.priority
